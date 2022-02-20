@@ -1,0 +1,45 @@
+$date
+	Sun Feb 20 16:43:09 2022
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module NAND_NOR_EXOR_tb $end
+$var wire 1 ! nor1 $end
+$var wire 1 " nand1 $end
+$var wire 1 # exor1 $end
+$var reg 1 $ A $end
+$var reg 1 % B $end
+$scope module Indtance $end
+$var wire 1 $ A $end
+$var wire 1 % B $end
+$var wire 1 # exor1 $end
+$var wire 1 " nand1 $end
+$var wire 1 ! nor1 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0%
+0$
+0#
+1"
+1!
+$end
+#1
+1#
+0!
+1%
+#2
+0%
+1$
+#3
+0"
+0#
+1!
+1%
+#4

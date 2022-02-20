@@ -1,0 +1,67 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_0000022507bbac70 .scope module, "NAND_NOR_EXOR_tb" "NAND_NOR_EXOR_tb" 2 8;
+ .timescale 0 0;
+v0000022507af6750_0 .var "A", 0 0;
+v0000022507af67f0_0 .var "B", 0 0;
+v0000022507af6890_0 .net "exor1", 0 0, L_0000022507bb8770;  1 drivers
+v0000022507af46a0_0 .net "nand1", 0 0, L_0000022507bb77d0;  1 drivers
+v0000022507af44c0_0 .net "nor1", 0 0, L_0000022507bb7da0;  1 drivers
+S_0000022507bbae00 .scope module, "Indtance" "NAND_NOR_EXOR" 2 12, 2 1 0, S_0000022507bbac70;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "nand1";
+    .port_info 1 /OUTPUT 1 "nor1";
+    .port_info 2 /OUTPUT 1 "exor1";
+    .port_info 3 /INPUT 1 "A";
+    .port_info 4 /INPUT 1 "B";
+L_0000022507bb9bf0 .functor AND 1, v0000022507af6750_0, v0000022507af67f0_0, C4<1>, C4<1>;
+L_0000022507bb77d0 .functor NOT 1, L_0000022507bb9bf0, C4<0>, C4<0>, C4<0>;
+L_0000022507bb7da0 .functor NOT 1, L_0000022507af4420, C4<0>, C4<0>, C4<0>;
+L_0000022507bb8770 .functor XOR 1, v0000022507af6750_0, v0000022507af67f0_0, C4<0>, C4<0>;
+v0000022507bb9b50_0 .net "A", 0 0, v0000022507af6750_0;  1 drivers
+v0000022507bb86d0_0 .net "B", 0 0, v0000022507af67f0_0;  1 drivers
+v0000022507bb7d00_0 .net *"_ivl_0", 0 0, L_0000022507bb9bf0;  1 drivers
+v0000022507bb7730_0 .net *"_ivl_4", 0 0, L_0000022507af4420;  1 drivers
+v0000022507af6570_0 .net "exor1", 0 0, L_0000022507bb8770;  alias, 1 drivers
+v0000022507af6610_0 .net "nand1", 0 0, L_0000022507bb77d0;  alias, 1 drivers
+v0000022507af66b0_0 .net "nor1", 0 0, L_0000022507bb7da0;  alias, 1 drivers
+L_0000022507af4420 .arith/sum 1, v0000022507af6750_0, v0000022507af67f0_0;
+    .scope S_0000022507bbac70;
+T_0 ;
+    %vpi_call 2 14 "$dumpfile", "dump.vcd" {0 0 0};
+    %vpi_call 2 15 "$dumpvars" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022507af6750_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022507af67f0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022507af6750_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022507af67f0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022507af6750_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0000022507af67f0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022507af6750_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0000022507af67f0_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 20 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "nandnorexor.v";
